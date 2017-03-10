@@ -15,17 +15,15 @@ export const font = {
     remote: fontSansName,
     local: fontSansDefault,
     size: {
-      desktop: 16,
-      laptop: 15,
-      tablet: 14,
-      phone: 13.5,
-    },
-  },
+      desktop: 16
+    }
+  }
 }
 
 /* DEVICE SIZE IN PX*/
 export const deviceSize = {
-  phone: 640,
+  desktop: 1200,
+  phone: 320
 }
 
 /* COLORS*/
@@ -36,10 +34,6 @@ export const color = {
   doveGray:'#666666',
   red: '#FF0000',
   bittersweet:'#FD6464',
-  wildStrawberry:'#FF408E'
-}
-
-
-export const height = {
-  button: '32px', // Button Height -- controls how "tall" are buttons and form elements ( via line height )
+  wildStrawberry:'#FF408E',
+  dustyGray:'#999999'
 }

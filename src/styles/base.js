@@ -5,9 +5,8 @@ import { font, color } from './constants'
 
 /* eslint no-unused-expressions: 0 */
 injectGlobal`
- html {
+html {
   font-size: ${font.base.size.desktop}px; 
-
 }
 
 body {
@@ -15,6 +14,7 @@ body {
   font-size: 1rem;
   line-height: 1.66;
   color: ${color.black}
+  line-height:1;
 }
 
 body.fontLoaded {
@@ -30,8 +30,17 @@ img {
   max-width: 100%;
 }
 
+a{
+  color: ${color.dustyGray};
+  display:inline-block;
+  &:hover {
+    color: ${color.wildStrawberry};
+  }
+}
+
 h1{
   font-size: 2rem;
+  
   ${media.phone`
     font-size: 1.375rem;
   `}
