@@ -8,7 +8,7 @@ const Wrapper=styled.div`
   width:400px;  
   height:600px;
   background:yellow;
-  ${media.phone`
+  ${media.mobile`
     width:100%;
   `}
 `

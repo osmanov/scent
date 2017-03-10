@@ -41,7 +41,7 @@ a{
 h1{
   font-size: 2rem;
   
-  ${media.phone`
+  ${media.mobile`
     font-size: 1.375rem;
   `}
 }

@@ -23,7 +23,7 @@ export const font = {
 /* DEVICE SIZE IN PX*/
 export const deviceSize = {
   desktop: 1200,
-  phone: 320
+  mobile: 320
 }
 
 /* COLORS*/

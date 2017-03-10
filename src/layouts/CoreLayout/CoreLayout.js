@@ -10,9 +10,9 @@ const Wrapper=styled.div`
   margin:0 auto;
   max-width: ${deviceSize.desktop}px;
   min-width: ${deviceSize.desktop}px; /*we don't need to create the ipad version*/
-  ${media.phone`
+  ${media.mobile`
     margin:0 20px;
-    min-width: ${deviceSize.phone-80}px;
+    min-width: ${deviceSize.mobile-80}px;
   `}
 `
 

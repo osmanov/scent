@@ -6,7 +6,7 @@ import { media } from 'styles/utils'
 
 const Wrapper=styled.div`
   background:pink;
-  ${media.phone`
+  ${media.mobile`
     width:100%;
   `}
 `

@@ -1,11 +1,19 @@
 import React from 'react'
-import PageTitle from 'components/PageTitle'
+import Media from 'react-media'
+
+import {deviceSize} from 'styles/constants'
+import DesktopView from './DesktopView'
+import MobileView from './MobileView'
+
 
 export const HomeView = () => (
-  <div>
-    <PageTitle/>
-  </div>
-
+    <Media query={{ maxWidth: deviceSize.mobile }}>
+      {isMobile => isMobile ? (
+        <MobileView/>
+      ) : (
+        <DesktopView/>
+      )}
+    </Media>
 )
 
 export default HomeView

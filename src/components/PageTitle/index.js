@@ -10,7 +10,7 @@ import P from './P'
 
 const Wrapper=styled.div`
  background:orange;
-  ${media.phone`
+  ${media.mobile`
    text-align:center;
   `}
 `
