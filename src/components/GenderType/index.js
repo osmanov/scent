@@ -9,7 +9,8 @@ const Wrapper=styled.div`
 
 export const PersonType = () => (
   <Wrapper>
-    Person Type
+    <input type="checkbox" value="woman" />For woman
+    <input type="checkbox" value="men" />For men
   </Wrapper>
 )
 
