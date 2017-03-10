@@ -5,7 +5,7 @@ import PageTitle from 'components/PageTitle'
 import OrderCard from 'components/OrderCard'
 import Button from 'components/Button'
 import Address from 'components/Address'
-import PersonType from 'components/PersonType'
+import GenderType from 'components/GenderType'
 import Payment from 'components/Payment'
 import OrderDescription from 'components/OrderDescription'
 import styled from 'styled-components'
@@ -20,7 +20,7 @@ export const MobileView = () => (
   <Wrapper>
     <PageTitle/>
     <OrderCard isMobile/>
-    <PersonType/>
+    <GenderType/>
     <Address/>
     <Payment/>
     <Button/>

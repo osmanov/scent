@@ -5,13 +5,12 @@ import { media } from 'styles/utils'
 
 import Pic from './Pic'
 import Сalculation from './Сalculation'
-
+import {color} from 'styles/constants'
 
 const Wrapper=styled.div`
-  width: ${(props) => {
-    const result = props.isMobile ? '100%' : '340px'
-    return `${result};`
-  }}
+  width:100%;
+ 
+  border:1px solid ${color.mercury};
   margin:0 auto;
   padding:40px 0;
   font-size:0.875rem;

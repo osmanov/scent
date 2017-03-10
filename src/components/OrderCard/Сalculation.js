@@ -5,8 +5,7 @@ import {color} from 'styles/constants'
 
 const Wrapper=styled.div`
   border-top:1px solid ${color.mercury};
-  
-  margin-top:40px;
+  margin:40px 30px 0;
   padding:5px 0;
 `
 
@@ -30,6 +29,7 @@ const Row=styled.div`
     }else if(props.footer){
       return `
          justify-content: flex-start;
+         padding-bottom:0;
          font-size:1rem;`
     }
   }}

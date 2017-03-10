@@ -1,6 +1,6 @@
 import React from 'react'
 
-import {deviceSize,color} from 'styles/constants'
+
 import PageTitle from 'components/PageTitle'
 import OrderCard from 'components/OrderCard'
 import CreateAccount from 'components/CreateAccount'
@@ -15,11 +15,13 @@ const Wrapper=styled.div`
 `
 
 const Left=styled.div`
-  border:1px solid ${color.mercury};
+  width:400px; 
+  
 `
 
 const Right=styled.div`
  flex-grow:2;
+ padding-left:70px;
 `
 
 
