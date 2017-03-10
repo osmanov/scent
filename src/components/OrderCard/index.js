@@ -1,22 +1,35 @@
-import React from 'react'
+import React,{PropTypes} from 'react'
 import styled from 'styled-components'
-import { IndexLink, Link } from 'react-router'
+
 import { media } from 'styles/utils'
+
+import Pic from './Pic'
+import Сalculation from './Сalculation'
 
 
 const Wrapper=styled.div`
-  width:400px;  
-  height:600px;
-  background:yellow;
-  ${media.mobile`
-    width:100%;
-  `}
+  width: ${(props) => {
+    const result = props.isMobile ? '100%' : '340px'
+    return `${result};`
+  }}
+  margin:0 auto;
+  padding:40px 0;
+  font-size:0.875rem;
 `
 
-export const OrderCard = () => (
-  <Wrapper>
-    ORDER CARD
+export const OrderCard = (props) => (
+  <Wrapper {...props}>
+    <Pic/>
+    <Сalculation {...props}/>
   </Wrapper>
 )
+
+OrderCard.propTypes = {
+  isMobile: PropTypes.bool
+}
+
+OrderCard.defaultProps = {
+  isMobile: false
+}
 
 export default OrderCard

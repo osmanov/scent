@@ -1,6 +1,6 @@
 import React from 'react'
 
-import {deviceSize} from 'styles/constants'
+import {deviceSize,color} from 'styles/constants'
 import PageTitle from 'components/PageTitle'
 import OrderCard from 'components/OrderCard'
 import CreateAccount from 'components/CreateAccount'
@@ -10,22 +10,31 @@ import OrderDescription from 'components/OrderDescription'
 import styled from 'styled-components'
 
 const Wrapper=styled.div`
- 
+ display:flex;
+ justify-content:flex-start;
+`
+
+const Left=styled.div`
+  border:1px solid ${color.mercury};
+`
+
+const Right=styled.div`
+ flex-grow:2;
 `
 
 
 export const DesktopView = () => (
   <Wrapper>
-    <div>
+    <Left>
       <OrderCard/>
       <OrderDescription/>
-    </div>
-    <div>
+    </Left>
+    <Right>
       <PageTitle/>
       <CreateAccount/>
       <Address/>
       <Payment/>
-    </div>
+    </Right>
   </Wrapper>
 
 )

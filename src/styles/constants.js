@@ -35,5 +35,7 @@ export const color = {
   red: '#FF0000',
   bittersweet:'#FD6464',
   wildStrawberry:'#FF408E',
-  dustyGray:'#999999'
+  dustyGray:'#999999',
+  mercury:'#E6E6E6',
+  white:'#ffffff'
 }

@@ -19,7 +19,7 @@ const Wrapper=styled.div`
 export const MobileView = () => (
   <Wrapper>
     <PageTitle/>
-    <OrderCard/>
+    <OrderCard isMobile/>
     <PersonType/>
     <Address/>
     <Payment/>

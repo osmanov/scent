@@ -1,6 +1,5 @@
 import React from 'react'
 import styled from 'styled-components'
-import { IndexLink, Link } from 'react-router'
 
 import { media } from 'styles/utils'
 import Img from 'components/Img'
