@@ -35,13 +35,6 @@ export const validate = values => {
     errors.shippingZipCode = 'Required'
   }
 
-  if (!values.shippingCity) {
-    errors.shippingCity = 'Required'
-  }
-
-  if (!values.shippingState) {
-    errors.shippingState = 'Required'
-  }
 
   if (!values.shippingCountry) {
     errors.shippingCountry = 'Required'
@@ -55,13 +48,7 @@ export const validate = values => {
     errors.billingZipCode = 'Required'
   }
 
-  if (!values.billingCity) {
-    errors.billingCity = 'Required'
-  }
 
-  if (!values.billingState) {
-    errors.billingState = 'Required'
-  }
   if (!values.billingCountry) {
     errors.billingCountry = 'Required'
   }

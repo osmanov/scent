@@ -11,13 +11,8 @@ import Payment from 'components/Payment'
 class MobileViewForm extends React.Component {
   static propTypes = {
     handleSubmit: React.PropTypes.func.isRequired,
-    isMobile: React.PropTypes.bool
   }
 
-  static defaultProps = {
-    isMobile:false
-  }
-  
   render() {
     const { handleSubmit, submitting } = this.props
 

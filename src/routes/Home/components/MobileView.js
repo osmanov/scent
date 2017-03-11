@@ -21,7 +21,7 @@ export const MobileView = (props) => (
   <Wrapper>
     <PageTitle/>
     <OrderCard isMobile/>
-    <MobileViewForm onSubmit={props.onSubmit} isMobile/>
+    <MobileViewForm onSubmit={props.onSubmit}/>
     <OrderDescription/>
   </Wrapper>
 
