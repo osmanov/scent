@@ -8,6 +8,7 @@ import Address from 'components/Address'
 import GenderType from 'components/GenderType'
 import Payment from 'components/Payment'
 import OrderDescription from 'components/OrderDescription'
+import MobileViewForm from './MobileViewForm'
 import styled from 'styled-components'
 
 
@@ -16,14 +17,11 @@ const Wrapper=styled.div`
   
 `
 
-export const MobileView = () => (
+export const MobileView = (props) => (
   <Wrapper>
     <PageTitle/>
     <OrderCard isMobile/>
-    <GenderType/>
-    <Address/>
-    <Payment/>
-    <Button/>
+    <MobileViewForm onSubmit={props.onSubmit} isMobile/>
     <OrderDescription/>
   </Wrapper>
 

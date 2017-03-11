@@ -1,4 +1,13 @@
 import React from 'react';
+import styled from 'styled-components'
+
+const Wrapper=styled.div`
+  width:100%;
+  &>select{
+    width:inherit;
+  }
+  
+`
 
 class Select extends React.Component {
   static propTypes = {
@@ -21,15 +30,15 @@ class Select extends React.Component {
   }
 
   render() {
-    const { children, input, meta: {visited, touched, error}} = this.props
+    const { children, input, meta: {visited, touched, error},...other} = this.props
     const errorMsg = (visited || touched) && error
     return (
-      <div>
+      <Wrapper {...other}>
         <select {...input} onChange={this._onChange}>
           {children}
         </select>
         {errorMsg && <span>{errorMsg}</span>}
-      </div>
+      </Wrapper>
     );
   }
 }

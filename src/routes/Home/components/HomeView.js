@@ -14,7 +14,7 @@ class HomeView extends React.Component {
     return (
       <Media query={{ maxWidth: deviceSize.mobile }}>
         {isMobile => isMobile ? (
-          <MobileView/>
+          <MobileView onSubmit={this.submit}/>
         ) : (
           <DesktopView onSubmit={this.submit}/>
         )}

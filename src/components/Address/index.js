@@ -9,12 +9,33 @@ import { media } from 'styles/utils'
 
 const Wrapper=styled.div`
   background:grey;
+ 
+`
+
+const WrapperName=styled.div`
+  display:flex;
+  justify-content:space-between;
   ${media.mobile`
-    width:100%;
+    flex-direction:column;
+  `}
+`
+
+const InputLastName=styled(Input)`
+  margin-left:20px;
+  ${media.mobile`
+     margin-left:0;
   `}
 `
 
 class Address extends React.Component {
+  static propTypes = {
+    isMobile: React.PropTypes.bool
+  }
+
+  static defaultProps = {
+    isMobile:false
+  }
+
   state = {
     billingIsShipping: true
   }
@@ -28,20 +49,20 @@ class Address extends React.Component {
   render() {
     return (
       <Wrapper>
-        ADDRESS
+        <h3>Shipping address</h3>
         <div>
-          <div>
+          <WrapperName>
             <Field
               name='firstName'
               component={Input}
               placeholder='First name' />
             <Field
               name='lastName'
-              component={Input}
+              component={InputLastName}
               placeholder='Last name' />
-          </div>
+          </WrapperName>
           <div>
-            <Shipping/>
+            <Shipping isMobile={this.props.isMobile}/>
 
             <div>
               <Field

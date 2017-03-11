@@ -16,7 +16,9 @@ class DesktopViewForm extends React.Component {
       <form onSubmit={handleSubmit}>
         <CreateAccount/>
         <Address/>
-        <button type='submit' disabled={submitting} >{submitting ? 'Loading...' : 'buy now'}</button>
+        {/*<Address/>
+        <Payment/>
+        <button type='submit' disabled={submitting} >{submitting ? 'Loading...' : 'buy now'}</button>*/}
       </form>
     );
   }

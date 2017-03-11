@@ -2,32 +2,37 @@ import React from 'react'
 import { Field } from 'redux-form'
 import Input from 'components/FormFields/Input'
 import Select from 'components/FormFields/Select'
+import InputThirdPart from './InputThirdPart'
+import StreetAptWrapper from './StreetAptWrapper'
+import SelectCenterPart from './SelectCenterPart'
+import ZipCityStateWrapper from './ZipCityStateWrapper'
 import { media } from 'styles/utils'
 
 const Billing = () => (
   <div>
-    <div>
+    <h3>Billing address</h3>
+    <StreetAptWrapper>
       <Field
         name='billingStreetAddress'
         component={Input}
         placeholder='Street address' />
       <Field
         name='billingAptSuite'
-        component={Input}
+        component={InputThirdPart}
         placeholder='Apt/Suite(Optional)' />
-    </div>
-    <div>
+    </StreetAptWrapper>
+    <ZipCityStateWrapper>
       <Field
         name='billingZipCode'
         component={Input}
         placeholder='ZIP' />
-      <Field name="billingCity" component={Select}>
+      <Field name="billingCity" component={SelectCenterPart}>
         <option value='New York'>New York</option>
       </Field>
       <Field name="billingState" component={Select}>
         <option value='New York'>New York</option>
       </Field>
-    </div>
+    </ZipCityStateWrapper>
     <div>
       <Field
         name='billingCountry'

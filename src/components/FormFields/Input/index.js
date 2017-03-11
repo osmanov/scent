@@ -1,13 +1,22 @@
 import React from 'react';
+import styled from 'styled-components'
+
+const Wrapper=styled.div`
+  width:100%;
+  &>input{
+    width:inherit;
+  }
+  
+`
 
 class Input extends React.Component {
   render() {
-    
+
     const {input, meta: {visited, touched, error}, type, placeholder, ...other}=this.props
     const errorMsg = (visited || touched) && error
 
     return (
-      <div>
+      <Wrapper {...other}>
         <input
           {...input}
           autoComplete='off'
@@ -15,7 +24,7 @@ class Input extends React.Component {
           placeholder={placeholder}
           />
         {errorMsg && <span>{errorMsg}</span>}
-      </div>
+      </Wrapper>
     );
   }
 }
