@@ -30,7 +30,7 @@ class Select extends React.Component {
   }
 
   render() {
-    const { children, input, meta: {visited, touched, error},...other} = this.props
+    const { children, input,meta: {visited, touched, error},...other} = this.props
     const errorMsg = (visited || touched) && error
     return (
       <Wrapper {...other}>

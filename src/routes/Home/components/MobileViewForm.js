@@ -19,6 +19,7 @@ class MobileViewForm extends React.Component {
     return (
       <form onSubmit={handleSubmit}>
         <Address isMobile/>
+        <Payment isMobile/>
         <button type='submit' disabled={submitting} >{submitting ? 'Loading...' : 'buy now'}</button>
       </form>
     );
