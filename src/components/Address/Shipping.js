@@ -2,7 +2,7 @@ import React from 'react'
 import { Field } from 'redux-form'
 import Input from 'components/FormFields/Input'
 import Select from 'components/FormFields/Select'
-import StreetAptWrapper from './StreetAptWrapper'
+import WrapperHalf from './WrapperHalf'
 import InputThirdPart from './InputThirdPart'
 import ZipCityStateWrapper from './ZipCityStateWrapper'
 import SelectCenterPart from './SelectCenterPart'
@@ -17,7 +17,7 @@ const Wrapper=styled.div`
 
 const Shipping = (props) => (
   <div>
-    <StreetAptWrapper>
+    <WrapperHalf>
       <Field
         name='shippingStreetAddress'
         component={Input}
@@ -26,7 +26,7 @@ const Shipping = (props) => (
         name='shippingAptSuite'
         component={InputThirdPart}
         placeholder='Apt/Suite(Optional)' />
-    </StreetAptWrapper>
+    </WrapperHalf>
     {props.isMobile ? <div>
     <Field
       name='shippingZipCode'

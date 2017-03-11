@@ -4,27 +4,19 @@ import { Field } from 'redux-form'
 import Input from 'components/FormFields/Input'
 import Shipping from './Shipping'
 import Billing from './Billing'
+import WrapperHalf from './WrapperHalf'
 import { media } from 'styles/utils'
-
-
-const Wrapper=styled.div`
-  background:grey;
- 
-`
-
-const WrapperName=styled.div`
-  display:flex;
-  justify-content:space-between;
-  ${media.mobile`
-    flex-direction:column;
-  `}
-`
 
 const InputLastName=styled(Input)`
   margin-left:20px;
   ${media.mobile`
      margin-left:0;
   `}
+`
+const DescriptionAdvertising=styled.div`
+  margin-left:20px;
+  width:100%;
+  font-size:0.875rem;
 `
 
 class Address extends React.Component {
@@ -48,10 +40,10 @@ class Address extends React.Component {
 
   render() {
     return (
-      <Wrapper>
+      <div>
         <h3>Shipping address</h3>
         <div>
-          <WrapperName>
+          <WrapperHalf>
             <Field
               name='firstName'
               component={Input}
@@ -60,16 +52,18 @@ class Address extends React.Component {
               name='lastName'
               component={InputLastName}
               placeholder='Last name' />
-          </WrapperName>
+          </WrapperHalf>
           <div>
             <Shipping isMobile={this.props.isMobile}/>
-
-            <div>
+            <WrapperHalf>
               <Field
                 name='phone'
                 component={Input}
-                placeholder='Mobile number(Optional)' />
-            </div>
+                placeholder={this.props.isMobile?'Phone number(Optional)':'Mobile number(Optional)'} />
+              {!this.props.isMobile && <DescriptionAdvertising>
+                We may send you special discounts and offers
+              </DescriptionAdvertising>}
+            </WrapperHalf>
             <label>
               Use this address as my billing address:
               <input
@@ -81,7 +75,7 @@ class Address extends React.Component {
             {!this.state.billingIsShipping && <Billing/>}
           </div>
         </div>
-      </Wrapper>
+      </div>
     );
   }
 }
