@@ -5,6 +5,7 @@ import styled from 'styled-components'
 import CreateAccount from 'components/CreateAccount'
 import Address from 'components/Address'
 import Payment from 'components/Payment'
+import PageTitle from 'components/PageTitle'
 import Button from 'components/Button'
 
 const Wrapper=styled.div`
@@ -28,6 +29,10 @@ class DesktopViewForm extends React.Component {
 
     return (
       <form onSubmit={handleSubmit}>
+        <Wrapper>
+
+          <PageTitle/>
+        </Wrapper>
         <Wrapper>
           <CreateAccount/>
         </Wrapper>

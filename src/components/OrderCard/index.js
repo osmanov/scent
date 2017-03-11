@@ -14,6 +14,10 @@ const Wrapper=styled.div`
   margin:0 auto;
   padding:40px 0;
   font-size:0.875rem;
+  ${media.mobile`
+    margin-top:55px;
+    margin-bottom:40px;
+  `}
 `
 
 export const OrderCard = (props) => (

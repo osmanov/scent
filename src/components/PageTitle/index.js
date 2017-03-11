@@ -9,7 +9,6 @@ import P from './P'
 
 
 const Wrapper=styled.div`
- background:orange;
   ${media.mobile`
    text-align:center;
   `}

@@ -38,9 +38,10 @@ a{
   }
 }
 
+
 h1{
   font-size: 2rem;
-  
+   margin-bottom:20px;
   ${media.mobile`
     font-size: 1.375rem;
   `}
