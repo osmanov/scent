@@ -7,6 +7,7 @@ import MobileView from './MobileView'
 
 class HomeView extends React.Component {
   submit = data => {
+    alert('SUCCESS')
     return console.log(data)
   }
 

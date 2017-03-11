@@ -4,7 +4,7 @@ import { Field } from 'redux-form'
 import Input from 'components/FormFields/Input'
 import Select from 'components/FormFields/Select'
 import { media } from 'styles/utils'
-
+import {color} from 'styles/constants'
 
 const WrapperExp=styled.div`
   display:flex;
@@ -15,9 +15,29 @@ const WrapperDesktopCardNum=styled.div`
   display:flex;
 `
 
+const ContentWrapper=styled.div`
+    border:1px solid ${color.mercury};
+    background: ${color.alabaster};
+    & select{
+     ${media.mobile`
+       padding-left:0;
+       padding-right:0;
+     `}
+    }
+    & input,& select {
+      background: ${color.white};
+      ${media.mobile`
+       font-size:14px;
+     `}
+      
+    }
+    padding:80px 60px 20px 20px;
+`
+
 const InputSecurityCode=styled(Input)`
  width:188px;
  margin-left:20px;
+ 
  ${media.mobile`
     width:166px;
      margin-left:0;
@@ -106,7 +126,9 @@ class Payment extends React.Component {
     return (
       <div>
         <h3>Secure credit card payment</h3>
-        {this.props.isMobile ? this._mobile() : this._desktop()}
+        <ContentWrapper>
+          {this.props.isMobile ? this._mobile() : this._desktop()}
+        </ContentWrapper>
       </div>
     );
   }
