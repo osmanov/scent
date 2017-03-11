@@ -48,7 +48,7 @@ h1{
 
 h3{
   font-size: 1.5rem;
-  
+  margin-bottom:30px;
   ${media.mobile`
     font-size: 1.25rem;
   `}

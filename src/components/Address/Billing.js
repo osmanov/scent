@@ -7,9 +7,18 @@ import WrapperHalf from './WrapperHalf'
 import SelectCenterPart from './SelectCenterPart'
 import ZipCityStateWrapper from './ZipCityStateWrapper'
 import { media } from 'styles/utils'
+import styled from 'styled-components'
+
+const Wrapper=styled.div`
+ margin-top:50px;
+ ${media.mobile`
+  margin-top:40px;
+ `}
+`
+
 
 const Billing = () => (
-  <div>
+  <Wrapper>
     <h3>Billing address</h3>
     <WrapperHalf>
       <Field
@@ -39,6 +48,6 @@ const Billing = () => (
         component={Input}
         placeholder='Country' />
     </div>
-  </div>
+  </Wrapper>
 )
 export default Billing

@@ -7,7 +7,7 @@ import { media } from 'styles/utils'
 import { Field } from 'redux-form'
 import styled from 'styled-components'
 
-const Wrapper=styled.div`
+const FieldsWrapper=styled.div`
   display:flex;
   justify-content:space-between;
 `
@@ -19,7 +19,7 @@ const InputPassword = styled(Input)`
 export const CreateAccount = () => (
   <div>
     <h3>Create account</h3>
-    <Wrapper>
+    <FieldsWrapper>
       <Field
         name='email'
         component={Input}
@@ -29,7 +29,7 @@ export const CreateAccount = () => (
         type='password'
         component={InputPassword}
         placeholder='Password' />
-    </Wrapper>
+    </FieldsWrapper>
   </div>
 )
 

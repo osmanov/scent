@@ -8,6 +8,7 @@ import { media } from 'styles/utils'
 
 const WrapperExp=styled.div`
   display:flex;
+  margin-top:20px;
 `
 
 const WrapperDesktopCardNum=styled.div`
@@ -20,6 +21,7 @@ const InputSecurityCode=styled(Input)`
  ${media.mobile`
     width:166px;
      margin-left:0;
+     margin-top:20px;
   `}
 `
 

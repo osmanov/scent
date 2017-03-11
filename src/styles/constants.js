@@ -37,5 +37,6 @@ export const color = {
   wildStrawberry:'#FF408E',
   dustyGray:'#999999',
   mercury:'#E6E6E6',
-  white:'#ffffff'
+  white:'#ffffff',
+  alabaster:'#FAFAFA',
 }

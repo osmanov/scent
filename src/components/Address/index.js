@@ -6,6 +6,7 @@ import Shipping from './Shipping'
 import Billing from './Billing'
 import WrapperHalf from './WrapperHalf'
 import { media } from 'styles/utils'
+import { color } from 'styles/constants'
 
 const InputLastName=styled(Input)`
   margin-left:20px;
@@ -17,6 +18,13 @@ const DescriptionAdvertising=styled.div`
   margin-left:20px;
   width:100%;
   font-size:0.875rem;
+  display: flex;
+  justify-content:center;
+  flex-direction:column;
+`
+
+const Label=styled.label`
+  color:${color.doveGray};
 `
 
 class Address extends React.Component {
@@ -64,14 +72,14 @@ class Address extends React.Component {
                 We may send you special discounts and offers
               </DescriptionAdvertising>}
             </WrapperHalf>
-            <label>
-              Use this address as my billing address:
+            <Label>
               <input
                 name="billingIsShipping"
                 type="checkbox"
                 checked={this.state.billingIsShipping}
                 onChange={this._toggleCheckbox} />
-            </label>
+              Use this address as my billing address
+            </Label>
             {!this.state.billingIsShipping && <Billing/>}
           </div>
         </div>

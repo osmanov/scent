@@ -1,29 +1,66 @@
 import React from 'react';
 import styled from 'styled-components'
+import {color} from 'styles/constants'
 
 const Wrapper=styled.div`
   width:100%;
   &>input{
     width:inherit;
   }
-  
+  position:relative;
+`
+
+const CurrentInput=styled.input`
+    background: ${color.alabaster};
+    padding: 15px;
+    line-height: 100%;
+    font-size: 1.125rem;
+    border-style: solid;
+    border-color: ${(props) => {
+      const result = props.isError ? color.red : color.mercury
+      return `${result};`
+    }}
+    border-width: 1px;
+    outline: none;
+    text-overflow: ellipsis;
+    &:focus {
+			border-color: ${(props) => {
+        const result = props.isError ? color.red : color.wildStrawberry
+        return `${result};`
+      }}
+			background: ${color.white};
+			&::-webkit-input-placeholder{
+			  opacity:0;
+		  }
+		}
+`
+
+
+const ErrorSection=styled.div`
+  position:absolute;
+  bottom:-15px;
+  color:${color.red}
+  font-size: 0.75rem;
 `
 
 class Input extends React.Component {
   render() {
 
-    const {input, meta: {visited, touched, error}, type, placeholder, ...other}=this.props
-    const errorMsg = (visited || touched) && error
+    const {input, meta: {touched, error}, type, placeholder, ...other}=this.props
+    const errorMsg = touched && error
 
     return (
       <Wrapper {...other}>
-        <input
+        <CurrentInput
+          isError={!!errorMsg}
           {...input}
           autoComplete='off'
           type={type}
           placeholder={placeholder}
           />
-        {errorMsg && <span>{errorMsg}</span>}
+        {errorMsg && <ErrorSection>
+          <span>{errorMsg}</span>
+        </ErrorSection>}
       </Wrapper>
     );
   }

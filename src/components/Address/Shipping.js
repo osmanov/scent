@@ -9,9 +9,8 @@ import SelectCenterPart from './SelectCenterPart'
 import { media } from 'styles/utils'
 import styled from 'styled-components'
 
-const Wrapper=styled.div`
-  background:grey;
- 
+const WrapperFields=styled.div`
+  margin-bottom:20px;
 `
 
 
@@ -27,12 +26,12 @@ const Shipping = (props) => (
         component={InputThirdPart}
         placeholder='Apt/Suite(Optional)' />
     </WrapperHalf>
-    {props.isMobile ? <div>
+    {props.isMobile ? <WrapperFields>
     <Field
       name='shippingZipCode'
       component={Input}
       placeholder='ZIP' />
-  </div> :
+  </WrapperFields> :
     <ZipCityStateWrapper>
       <Field
         name='shippingZipCode'
@@ -47,12 +46,12 @@ const Shipping = (props) => (
         <option value='New York'>New York</option>
       </Field>
     </ZipCityStateWrapper>}
-    <div>
+    <WrapperFields>
       <Field
         name='shippingCountry'
         component={Input}
         placeholder='Country' />
-    </div>
+    </WrapperFields>
   </div>
 )
 
