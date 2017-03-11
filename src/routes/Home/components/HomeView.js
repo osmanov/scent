@@ -5,15 +5,23 @@ import {deviceSize} from 'styles/constants'
 import DesktopView from './DesktopView'
 import MobileView from './MobileView'
 
+class HomeView extends React.Component {
+  submit = data => {
+    return console.log(data)
+  }
 
-export const HomeView = () => (
-    <Media query={{ maxWidth: deviceSize.mobile }}>
-      {isMobile => isMobile ? (
-        <MobileView/>
-      ) : (
-        <DesktopView/>
-      )}
-    </Media>
-)
+  render() {
+    return (
+      <Media query={{ maxWidth: deviceSize.mobile }}>
+        {isMobile => isMobile ? (
+          <MobileView/>
+        ) : (
+          <DesktopView onSubmit={this.submit}/>
+        )}
+      </Media>
+    );
+  }
+}
 
-export default HomeView
+export default HomeView;
+

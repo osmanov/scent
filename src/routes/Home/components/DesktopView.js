@@ -7,6 +7,8 @@ import CreateAccount from 'components/CreateAccount'
 import Address from 'components/Address'
 import Payment from 'components/Payment'
 import OrderDescription from 'components/OrderDescription'
+import DesktopViewForm from './DesktopViewForm'
+
 import styled from 'styled-components'
 
 const Wrapper=styled.div`
@@ -25,17 +27,14 @@ const Right=styled.div`
 `
 
 
-export const DesktopView = () => (
+export const DesktopView = (props) => (
   <Wrapper>
     <Left>
       <OrderCard/>
       <OrderDescription/>
     </Left>
     <Right>
-      <PageTitle/>
-      <CreateAccount/>
-      <Address/>
-      <Payment/>
+      <DesktopViewForm onSubmit={props.onSubmit}/>
     </Right>
   </Wrapper>
 

@@ -1,6 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
-import { IndexLink, Link } from 'react-router'
+import { Field } from 'redux-form'
+import Input from 'components/FormFields/Input'
+
 import { media } from 'styles/utils'
 
 
@@ -14,6 +16,17 @@ const Wrapper=styled.div`
 export const CreateAccount = () => (
   <Wrapper>
     CREATE ACCOUNT
+    <div>
+      <Field
+        name='email'
+        component={Input}
+        placeholder='Email address' />
+      <Field
+        name='password'
+        type='password'
+        component={Input}
+        placeholder='Password' />
+    </div>
   </Wrapper>
 )
 
