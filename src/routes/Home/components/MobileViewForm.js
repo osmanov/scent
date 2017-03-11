@@ -5,6 +5,7 @@ import styled from 'styled-components'
 import GenderType from 'components/GenderType'
 import Address from 'components/Address'
 import Payment from 'components/Payment'
+import Button from 'components/Button'
 
 const Wrapper=styled.div`
  margin-bottom:40px;
@@ -16,7 +17,7 @@ class MobileViewForm extends React.Component {
   }
 
   render() {
-    const { handleSubmit, submitting } = this.props
+    const { handleSubmit } = this.props
 
     return (
       <form onSubmit={handleSubmit}>
@@ -26,8 +27,8 @@ class MobileViewForm extends React.Component {
         <Wrapper>
           <Payment isMobile/>
         </Wrapper>
+        <Button text="buy now"/>
 
-        <button type='submit' disabled={submitting} >{submitting ? 'Loading...' : 'buy now'}</button>
       </form>
     );
   }
