@@ -1,6 +1,7 @@
 import React from 'react'
 import { Field } from 'redux-form'
 import Input from 'components/FormFields/Input'
+import Select from 'components/FormFields/Select'
 import { media } from 'styles/utils'
 
 const Billing = () => (
@@ -20,14 +21,12 @@ const Billing = () => (
         name='billingZipCode'
         component={Input}
         placeholder='ZIP' />
-      <Field
-        name='billingCity'
-        component={Input}
-        placeholder='City' />
-      <Field
-        name='billingState'
-        component={Input}
-        placeholder='State' />
+      <Field name="billingCity" component={Select}>
+        <option value='New York'>New York</option>
+      </Field>
+      <Field name="billingState" component={Select}>
+        <option value='New York'>New York</option>
+      </Field>
     </div>
     <div>
       <Field
