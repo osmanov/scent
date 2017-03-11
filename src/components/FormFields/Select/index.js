@@ -21,13 +21,14 @@ class Select extends React.Component {
   }
 
   render() {
-    const { children, input} = this.props
-
+    const { children, input, meta: {visited, touched, error}} = this.props
+    const errorMsg = (visited || touched) && error
     return (
       <div>
         <select {...input} onChange={this._onChange}>
           {children}
         </select>
+        {errorMsg && <span>{errorMsg}</span>}
       </div>
     );
   }
