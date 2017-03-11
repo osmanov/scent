@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components'
+import ErrorSection from '../ErrorSection'
 import {color} from 'styles/constants'
 
 const Wrapper=styled.div`
@@ -36,12 +37,7 @@ const CurrentInput=styled.input`
 `
 
 
-const ErrorSection=styled.div`
-  position:absolute;
-  bottom:-15px;
-  color:${color.red}
-  font-size: 0.75rem;
-`
+
 
 class Input extends React.Component {
   render() {

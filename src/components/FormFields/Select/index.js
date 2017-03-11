@@ -1,12 +1,38 @@
 import React from 'react';
 import styled from 'styled-components'
+import {color} from 'styles/constants'
+import ErrorSection from '../ErrorSection'
+
+
 
 const Wrapper=styled.div`
   width:100%;
-  &>select{
+`
+
+const CurrentSelect=styled.select`
+    color:${color.dustyGray};
     width:inherit;
-  }
-  
+    padding: 15px 35px 15px 15px ;
+    background: ${color.alabaster};
+    font-size: 1.125rem;
+    border-style: solid;
+    border-color: ${(props) => {
+     const result = props.isError ? color.red : color.mercury
+     return `${result};`
+    }}
+    border-width: 1px;
+    outline: none;
+    &:focus {
+      border-color: ${(props) => {
+       const result = props.isError ? color.red : color.wildStrawberry
+       return `${result};`
+      }}
+      background: ${color.white};
+      &::-webkit-input-placeholder{
+        opacity:0;
+      }
+		}
+
 `
 
 class Select extends React.Component {
@@ -31,13 +57,16 @@ class Select extends React.Component {
 
   render() {
     const { children, input,meta: {visited, touched, error},...other} = this.props
-    const errorMsg = (visited || touched) && error
+    const errorMsg = (visited ||touched) && error
     return (
       <Wrapper {...other}>
-        <select {...input} onChange={this._onChange}>
+        <CurrentSelect {...input} isError={!!errorMsg} onChange={this._onChange}>
           {children}
-        </select>
-        {errorMsg && <span>{errorMsg}</span>}
+        </CurrentSelect>
+        {errorMsg && <ErrorSection>
+        <span>{errorMsg}</span>
+      </ErrorSection>}
+
       </Wrapper>
     );
   }
