@@ -15,6 +15,7 @@ const Wrapper=styled.div`
   padding:40px 0;
   font-size:0.875rem;
   ${media.mobile`
+    border:none;
     margin-bottom:40px;
   `}
 `

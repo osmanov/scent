@@ -7,6 +7,10 @@ const Wrapper=styled.div`
   border-top:1px solid ${color.mercury};
   margin:40px 30px 0;
   padding:5px 0;
+  ${media.mobile`
+    margin-left:0;
+    margin-right:0;
+  `}
 `
 
 const Row=styled.div`
