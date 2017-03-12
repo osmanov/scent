@@ -11,6 +11,7 @@ import P from './P'
 const Wrapper=styled.div`
   ${media.mobile`
    text-align:center;
+   margin-bottom:55px;
   `}
 `
 
